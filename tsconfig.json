@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "allowUnreachableCode": true
+  },
+  "exclude": [
+    "node_modules",
+    "ttLibJsEmc.js",
+    "dist"
+  ]
+}

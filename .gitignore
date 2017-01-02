@@ -1,0 +1,6 @@
+node_modules
+.vscode
+dist
+.emscripten_loader
+.DS_Store
+native

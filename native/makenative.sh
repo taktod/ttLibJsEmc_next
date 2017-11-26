@@ -1,4 +1,5 @@
 #!/bin/bash
+cd `dirname $0`
 
 # 必要なもの取得
 git clone https://github.com/taktod/ttLibC.git
@@ -9,19 +10,19 @@ git clone https://git.xiph.org/opus.git
 cd opus
 git checkout 3a1dc9d
 cd ../
-curl -O http://downloads.xiph.org/releases/ogg/libogg-1.3.2.tar.gz
-curl -O http://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2
-curl -O http://www.surina.net/soundtouch/soundtouch-1.9.2.tar.gz
-tar zxvf libogg-1.3.2.tar.gz
+curl -OL https://downloads.xiph.org/releases/ogg/libogg-1.3.3.tar.gz
+curl -OL https://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2
+curl -OL https://www.surina.net/soundtouch/soundtouch-1.9.2.tar.gz
+tar zxvf libogg-1.3.3.tar.gz
 tar zxvf libtheora-1.1.1.tar.bz2
 tar zxvf soundtouch-1.9.2.tar.gz
 git clone https://git.xiph.org/vorbis.git
-git clone http://git.xiph.org/speex.git
-git clone http://git.xiph.org/speexdsp.git
+git clone https://git.xiph.org/speex.git
+git clone https://git.xiph.org/speexdsp.git
 
 # あとはライブラリのコンパイル
-cd libogg-1.3.2
-patch configure < ../../native/ogg_configure.patch
+cd libogg-1.3.3
+#patch configure < ../../native/ogg_configure.patch
 emconfigure ./configure --host=x86_64 --prefix=`pwd`/../libs
 make
 make install

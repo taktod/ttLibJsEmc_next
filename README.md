@@ -55,6 +55,22 @@ $ npm install
 emscripten関連が必要なので、emsdk(emsdk_portableでしたっけ)が別途必要で、pathを通しておいてください。
 $ emcc --helpでemccのヘルプがでてくる感じで
 
+https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
+ここからemscriptenのプログラム取得
+解凍するとemsdk-portableというディレクトリが取得できる。
+この中にemsdkというプログラムがあるので次のようにする
+
+```
+$ ./emsdk update
+$ ./emsdk install latest
+$ ./emsdk activate latest
+$ ./emsdk_env.sh
+$ ./emsdk_set_env.sh
+$ export PATH=~/tools/emsdk-portable/emscripten/1.37.22/:$PATH
+```
+pathまで設定しないと、emccの実行はできるものの、実際にコンパイルを実施するとエラーになるみたいです。
+不便ですね。
+
 native/makenative.shを実行すると、必要なライブラリをダウンロードして、
 emscriptenで使えるようにコンパイルします。
 
